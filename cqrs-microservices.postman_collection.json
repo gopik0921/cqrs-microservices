@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "1b72bdee-f98e-4149-a10e-c0b03e715e82",
+		"name": "cqrs-microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:2000/api/v1/userlookup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTc5Njk1NzIsInVzZXJfbmFtZSI6ImdvcGkiLCJhdXRob3JpdGllcyI6WyJSRUFEX1BSSVZJTEVHRSIsIldSSVRFX1BSSVZJTEVHRSJdLCJqdGkiOiJmODEyYmEzMC03MjcyLTQyODEtODBiNC1jYTkxODQ0MjJiYTciLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.wCegz78XupVODP9lVkv-YQxcYjKiLnzMOPiOT6hFelU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2000/api/v1/userlookup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"userlookup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/oauth/token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic c3ByaW5nYmFua0NsaWVudDpzcHJpbmdiYW5rU2VjcmV0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "gopi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9081/api/v1/removeuser/e485303b-4a96-4111-9b08-056bacced63b",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9081/api/v1/removeuser/e485303b-4a96-4111-9b08-056bacced63b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9081",
+					"path": [
+						"api",
+						"v1",
+						"removeuser",
+						"e485303b-4a96-4111-9b08-056bacced63b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9082/api/v1/userlookup",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTc5Njk1NzIsInVzZXJfbmFtZSI6ImdvcGkiLCJhdXRob3JpdGllcyI6WyJSRUFEX1BSSVZJTEVHRSIsIldSSVRFX1BSSVZJTEVHRSJdLCJqdGkiOiJmODEyYmEzMC03MjcyLTQyODEtODBiNC1jYTkxODQ0MjJiYTciLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.wCegz78XupVODP9lVkv-YQxcYjKiLnzMOPiOT6hFelU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9082/api/v1/userlookup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9082",
+					"path": [
+						"api",
+						"v1",
+						"userlookup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9081/api/v1/registeruser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n        \"firstname\":\"eee\",\r\n        \"lastname\":\"krishna\",\r\n        \"emailAddress\":\"gg@ww.ll\",\r\n        \"account\":{\r\n            \"username\":\"gopi\",\r\n            \"password\":\"12345678\",\r\n            \"roles\":[\"READ_PRIVILEGE\",\"WRITE_PRIVILEGE\"]\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9081/api/v1/registeruser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9081",
+					"path": [
+						"api",
+						"v1",
+						"registeruser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

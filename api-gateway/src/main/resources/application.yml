@@ -9,6 +9,7 @@ spring:
           uri: http://localhost:8081/api/v1/registerUser
           predicates:
             - Path=/api/v1/registerUser
+        
 
         - id: userCmdApi-UpdateUser
           uri: http://localhost:8081/api/v1/updateUser/**
